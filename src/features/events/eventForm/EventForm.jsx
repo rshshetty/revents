@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { listenToSelectedEvent, clearSelectedEvent } from "../eventActions";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import cuid from "cuid";
 import MyTextInput from "../../../app/common/form/MyTextInput";
 import MyTextArea from "../../../app/common/form/MyTextArea";
 import MySelectInput from "../../../app/common/form/MySelectInput";
@@ -23,6 +22,7 @@ import useFirestoreDoc from "../../../app/hooks/useFirestoreDoc";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
+
 
 
 export default function EventForm({ match, history, location }) {
@@ -131,6 +131,7 @@ export default function EventForm({ match, history, location }) {
               disabled={!values.city.latLng}
               placeholder='Venue'
               options={{
+               
                 location: new google.maps.LatLng(values.city.latLng),
                 radius: 1000,
                 types: ["establishment"],

@@ -79,7 +79,7 @@ export function updateEventInFirestore(event) {
 
 export function deleteEventInFirestore(eventId) {
   return db.collection('events').doc(eventId).delete()
-  window.location.reload();
+
  }
 
 export function cancelEventToggle(event) {

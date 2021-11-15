@@ -1,14 +1,13 @@
-import React ,{useEffect} from 'react'
+import React from 'react'
 import { deleteEventInFirestore } from '../../../app/firestore/firestoreService';
 import firebase from '../../../app/config/firebase'
 import { Button } from 'semantic-ui-react';
-import { Link, useHistory } from 'react-router-dom';
+
 const Delete = ({event}) => {
-  const history = useHistory();
+
 
     const user = firebase.auth().currentUser;
-     console.log(user.uid);
-      console.log(event.hostUid);
+ 
 
 
       const getCountTimeout = () => {
@@ -23,14 +22,9 @@ const Delete = ({event}) => {
     
       }
 
-
-      
-    
-    
-
   return (
         <>
-            {user.uid==event.hostUid &&
+            {user.uid===event.hostUid &&
           <Button
             onClick={remove}
              

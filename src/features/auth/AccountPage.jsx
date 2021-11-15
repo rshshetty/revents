@@ -76,7 +76,7 @@ export default function AccountPage() {
           icon='facebook'
           color='facebook'
           as={Link}
-          to='https://facebook.com'
+          to='https://google.com'
           content='Go to Facebook'
         />
       </>}

@@ -29,21 +29,9 @@ export default function EventDashboard() {
       setLoadingInitial(false);
     });
 
-    //extra
-    // function handleCreateEvent(event) {
-    //   setEvents([...events, event]);
-    // }
-  
-    // function handleUpdateEvent(updatedEvent) {
-    //     setEvents(events.map(evt => evt.id === updatedEvent.id ? updatedEvent : evt));
-    //     selectEvent(null);
-    // }
-  
-    // function handleDeleteEvent(eventId) {
-    //     setEvents(events.filter(evt => evt.id !== eventId));
-    // }
 
-//extra
+
+
 
     return () => {
       dispatch({type: RETAIN_STATE})

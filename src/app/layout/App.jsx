@@ -33,15 +33,16 @@ export default function App() {
             <NavBar />
             <Container className='main'>
               <Route exact path='/events' component={EventDashboard} />
-              <Route path='/events/:id' component={EventDetailedPage} />
+              <Route exact path='/events/:id' component={EventDetailedPage} />
               <PrivateRoute
+                exact
                 path={['/createEvent', '/manage/:id']}
                 component={EventForm}
                 key={key}
               />
-              <PrivateRoute path='/account' component={AccountPage} />
-              <PrivateRoute path='/profile/:id' component={ProfilePage} />
-              <Route path='/error' component={ErrorComponent} />
+              <PrivateRoute path='/account' component={AccountPage} exact/>
+              <PrivateRoute path='/profile/:id' component={ProfilePage} exact/>
+              <Route path='*' component={ErrorComponent} />
             </Container>
           </>
         )}

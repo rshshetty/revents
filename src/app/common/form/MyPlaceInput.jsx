@@ -5,7 +5,6 @@ import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from "react-places-autocomplete";
-import cuid from "cuid";
 export default function MyPlaceInput({ label, options, ...props }) {
   const [field, meta, helpers] = useField(props);
 
@@ -25,6 +24,7 @@ export default function MyPlaceInput({ label, options, ...props }) {
 
   return (
     <PlacesAutocomplete
+      
       value={field.value["address"]}
       onChange={(value) => helpers.setValue({ address: value })}
       onSelect={(value) => handleSelect(value)}

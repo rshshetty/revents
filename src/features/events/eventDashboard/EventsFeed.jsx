@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { Feed, FeedMeta, Header, Segment } from 'semantic-ui-react';
+import { Feed, Header, Segment } from 'semantic-ui-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserFeedRef, firebaseObjectToArray } from './../../../app/firestore/firebaseService';
 import { listenToFeed } from './../../profiles/profileActions';

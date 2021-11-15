@@ -1,27 +1,16 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Segment, Item, Icon, List, Button, Label } from 'semantic-ui-react';
 import EventListAttendee from './EventListAttendee';
 import { Link } from 'react-router-dom';
 import {format} from 'date-fns';
-//import { deleteEventInFirestore } from '../../../app/firestore/firestoreService';
-import { useSelector } from 'react-redux';
-import firebase from '../../../app/config/firebase'
 import Delete from './Delete';
-
-
-
-
+import { useSelector } from 'react-redux';
 
 export default function EventListItem({event}) {
- const {authenticated} = useSelector(state => state.auth);
-
-
-    
 
 
 
-
-
+   const {authenticated} = useSelector(state => state.auth);
   return (
     <Segment.Group>
       <Segment>
@@ -62,7 +51,8 @@ export default function EventListItem({event}) {
         <div>{event.description}</div>
 
 
-  {authenticated &&
+  
+ {authenticated &&
 <Delete 
 event={event}
 />}
