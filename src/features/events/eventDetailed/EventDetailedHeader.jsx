@@ -51,6 +51,9 @@ export default function EventDetailedHeader({ event, isHost, isGoing }) {
     }
   }
 
+
+ 
+
   return (
     <>
       {modalOpen && <UnauthModal setModalOpen={setModalOpen} />}
@@ -106,17 +109,22 @@ export default function EventDetailedHeader({ event, isHost, isGoing }) {
           )}
 
           {isHost && (
-            <Button
-              as={Link}
-              to={`/manage/${event.id}`}
+
+
+            <Button 
               color='orange'
-              floated='right'
-            >
-              Manage Event
+              floated='right' >
+              <a href={`/manage/${event.id}`} style={{color:'white'}}> Manage Event</a>
+            
+             
             </Button>
+            
+            
           )}
         </Segment>
       </Segment.Group>
     </>
   );
 }
+
+

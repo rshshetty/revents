@@ -13,6 +13,7 @@ import { CLEAR_COMMENTS } from '../eventConstants';
 import { useState } from 'react';
 import { createDataTree } from '../../../app/common/util/util';
 
+
 export default function EventDetailedChat({ eventId }) {
   const dispatch = useDispatch();
   const {comments} = useSelector((state) => state.event);
@@ -25,6 +26,10 @@ export default function EventDetailedChat({ eventId }) {
   function handleCloseReplyForm() {
     setShowReplyForm({ open: false, commentId: null });
   }
+
+
+
+
 
   useEffect(() => {
     getEventChatRef(eventId).on('value', (snapshot) => {
@@ -48,7 +53,7 @@ export default function EventDetailedChat({ eventId }) {
         color='teal'
         style={{ border: 'none' }}
       >
-        <Header>{authenticated ? 'Chat about this event' : 'Sign in to view and comment'}</Header>
+        <Header>{authenticated ? 'Comment about this event' : 'Sign in to view and comment'}</Header>
       </Segment>
 
       {authenticated &&
@@ -85,6 +90,10 @@ export default function EventDetailedChat({ eventId }) {
                   >
                     Reply
                   </Comment.Action>
+                 
+
+
+
                   {showReplyForm.open &&
                     showReplyForm.commentId === comment.id && (
                       <EventDetailedChatForm
@@ -117,6 +126,7 @@ export default function EventDetailedChat({ eventId }) {
                             </span>
                           ))}
                         </Comment.Text>
+                        
                         <Comment.Actions>
                           <Comment.Action
                             onClick={() =>
@@ -128,6 +138,11 @@ export default function EventDetailedChat({ eventId }) {
                           >
                             Reply
                           </Comment.Action>
+
+
+                      
+
+
                           {showReplyForm.open &&
                             showReplyForm.commentId === child.id && (
                               <EventDetailedChatForm

@@ -10,6 +10,7 @@ import EventsFeed from './EventsFeed';
 import { useEffect } from 'react';
 import { RETAIN_STATE } from '../eventConstants';
 
+
 export default function EventDashboard() {
   const limit = 2;
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ export default function EventDashboard() {
   const {loading} = useSelector((state) => state.async);
   const {authenticated} = useSelector((state) => state.auth);
   const [loadingInitial,setLoadingInitial] = useState(false);
-
 
 
 
@@ -41,6 +41,13 @@ export default function EventDashboard() {
   function handleFetchNextEvents() {
     dispatch(fetchEvents(filter,startDate,limit,lastVisible));
   }
+
+
+
+
+
+
+
 
   return (
     <Grid>

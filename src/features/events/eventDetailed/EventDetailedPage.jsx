@@ -19,13 +19,15 @@ export default function EventDetailedPage({ match }) {
   const isHost = event?.hostUid === currentUser?.uid;
   const isGoing = event?.attendees?.some((a) => a.id === currentUser?.uid);
 
+
+
   useFirestoreDoc({
     query: () => listenToEventFromFirestore(match.params.id),
     data: (event) => dispatch(listenToSelectedEvent(event)),
     deps: [match.params.id, dispatch],
   });
 
-  if (loading || (!event && !error))
+ if (loading || (!event && !error))
     return <LoadingComponent content='Loading event...' />;
 
   if (error) return <Redirect to='/error' />;

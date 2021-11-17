@@ -25,7 +25,8 @@ export default function App() {
     <>
       <ModalManager />
       <ToastContainer position='bottom-right' hideProgressBar />
-      <Route exact path='/' component={HomePage} />
+      <Route exact path='/'
+       component={HomePage} />
       <Route
         path={'/(.+)'}
         render={() => (
@@ -42,7 +43,7 @@ export default function App() {
               />
               <PrivateRoute path='/account' component={AccountPage} exact/>
               <PrivateRoute path='/profile/:id' component={ProfilePage} exact/>
-              <Route path='*' component={ErrorComponent} />
+              <Route path='/error' component={ErrorComponent} />
             </Container>
           </>
         )}

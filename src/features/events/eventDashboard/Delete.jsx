@@ -18,9 +18,14 @@ const Delete = ({event}) => {
       
      function  remove(){
       deleteEventInFirestore(event.id)
-      getCountTimeout();
+       getCountTimeout();
     
       }
+
+  
+ 
+ 
+  
 
   return (
         <>

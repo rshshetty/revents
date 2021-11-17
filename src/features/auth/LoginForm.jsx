@@ -12,7 +12,7 @@ import SocialLogin from './SocialLogin';
 
  const initialValues = { email: '', password: '' }
 
-const savedValues={email:'daina@test.com', password:'123456'}
+const savedValues={email:'bruce@test.com', password:'123456'}
 
  const validationSchema=Yup.object({
                     email: Yup.string().required().email(),
