@@ -30,10 +30,10 @@ export default function MyPlaceInput({ label, options, ...props }) {
       onSelect={(value) => handleSelect(value)}
       searchOptions={options}
     >
-      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+      {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (            //props of PlacesAutpComplete  
         <FormField error={meta.touched && !!meta.error}>
           <input
-            {...getInputProps({
+            {...getInputProps({                         //to specify the input props showing in the input
               name: field.name,
               onBlur: (e) => handleBlur(e),
               ...props,
@@ -54,14 +54,14 @@ export default function MyPlaceInput({ label, options, ...props }) {
                 width: "100%",
               }}
             >
-              <List selection>
+              <List selection>                                     //type is selection as we have to select from the list
                 {suggestions.map((suggestion) => (
                   <List.Item {...getSuggestionItemProps(suggestion)}>
                     <List.Header>
-                      {suggestion.formattedSuggestion.mainText}
+                      {suggestion.formattedSuggestion.mainText}               //Eg: London
                     </List.Header>
                     <List.Description>
-                      {suggestion.formattedSuggestion.secondaryText}
+                      {suggestion.formattedSuggestion.secondaryText}              //Eg: UK
                     </List.Description>
                   </List.Item>
                 ))}
